@@ -1,0 +1,34 @@
+spring.application.name: kakushin
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        type: trace
+  redis:
+    host: localhost
+    port: 6379
+
+logging:
+  level:
+    org.springframework.cache: TRACE
+
+    org.hibernate.SQL: DEBUG           # Enable SQL logging for Hibernate
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE  # Show SQL parameters
+
+
+
+
+springdoc:
+  api-docs:
+    path: /api
+  swagger-ui:
+    path: /swagger-ui.html
